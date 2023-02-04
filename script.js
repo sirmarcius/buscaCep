@@ -32,3 +32,4 @@ async function searchCEP(cep) {
     const results = await searchCEP(cep);
     displayResults(results);
   });
+  
