@@ -1,4 +1,4 @@
-
+// Função para buscar o CEP
 async function searchCEP(cep) {
     try {
       const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
@@ -9,7 +9,7 @@ async function searchCEP(cep) {
       return null;
     }
   }
-  
+  // Função para exibir os resultados
   function displayResults(data) {
     const resultDiv = document.getElementById("result");
     if (!data) {
@@ -24,7 +24,7 @@ async function searchCEP(cep) {
       <p><strong>Estado:</strong> ${data.uf}</p>
     `;
   }
-  
+  // Adiciona um event listener ao formulário de busca
   const form = document.querySelector("form");
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -32,4 +32,3 @@ async function searchCEP(cep) {
     const results = await searchCEP(cep);
     displayResults(results);
   });
-  
